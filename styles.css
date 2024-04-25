@@ -82,7 +82,7 @@ body {
     left: 20px;
     z-index: 1000;
     color: #333;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 #nav-button span:hover {
