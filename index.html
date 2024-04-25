@@ -63,19 +63,5 @@
             </section>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('wheel', function(e) {
-            e.preventDefault(); // Prevent the default wheel behavior (scrolling)
-            const sections = document.querySelectorAll('.full-page');
-            const scrollUp = e.deltaY < 0;
-            let currentSection = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2).closest('.full-page');
-            let nextSection = scrollUp ? currentSection.previousElementSibling : currentSection.nextElementSibling;
-
-            if (nextSection && nextSection.classList.contains('full-page')) {
-                nextSection.scrollIntoView({behavior: 'smooth'});
-            }
-        });
-    </script>
 </body>
 </html>
