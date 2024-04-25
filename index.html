@@ -8,6 +8,18 @@
     <title id="page-title">PouyaMT</title>
 </head>
 <body>
+    <div id="sidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#home">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#works">Works</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="container" id="nav-button">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
+    
     <div class="full-page" id="home">
         <div class="container">
             <h1>PouyaMT</h1>
@@ -63,5 +75,29 @@
             </section>
         </div>
     </div>
+
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function openNav() {
+            document.getElementById("sidenav").style.width = "175px";
+            document.getElementById("home").style.marginLeft = "175px";
+            document.getElementById("skills").style.marginLeft = "175px";
+            document.getElementById("works").style.marginLeft = "175px";
+            document.getElementById("contact").style.marginLeft = "175px";
+            document.getElementById("nav-button").style.display = "none";
+        }
+
+        function closeNav() {
+            document.getElementById("sidenav").style.width = "0";
+            document.getElementById("home").style.marginLeft = "0";
+            document.getElementById("skills").style.marginLeft = "0";
+            document.getElementById("works").style.marginLeft = "0";
+            document.getElementById("contact").style.marginLeft = "0";
+            sleep(275).then(() => { document.getElementById("nav-button").style.display = "block"; });
+        }
+    </script>
 </body>
 </html>
