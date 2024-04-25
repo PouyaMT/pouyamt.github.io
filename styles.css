@@ -117,11 +117,29 @@ h1 {
     color: #333;
     display: inline-block;
     margin-right: 10px;
-    transition: 0.3s;
+    margin-bottom: 5px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.section a::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #888;
+    transition: width 0.3s ease-out;
+    transform-origin: left;
 }
 
 .section a:hover {
-    color: #999;
+    color: #888;
+}
+
+.section a:hover::after {
+    width: 100%;
 }
 
 hr {
